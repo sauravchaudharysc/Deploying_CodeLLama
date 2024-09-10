@@ -1,0 +1,6 @@
+615049:C 28 Jul 2024 19:18:43.709 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+615049:C 28 Jul 2024 19:18:43.709 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=615049, just started
+615049:C 28 Jul 2024 19:18:43.709 # Configuration loaded
+615049:M 28 Jul 2024 19:18:43.709 * monotonic clock: POSIX clock_gettime
+615049:M 28 Jul 2024 19:18:43.710 # Warning: Could not create server TCP listening socket 127.0.0.1:6379: bind: Address already in use
+615049:M 28 Jul 2024 19:18:43.710 # Failed listening on port 6379 (TCP), aborting.

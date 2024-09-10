@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  ai_bodhitree:
+    image: totq:tyoyo
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    dns:
+      - 8.8.8.8
+    ports:
+      - "10.195.100.5:8003:8000"
+    volumes:
+      - /raid/ganesh/nagakalyani/nagakalyani/autograding/huggingface_codellama/CodeLlama-7b-Instruct-hf:/ai_bodhitree/CodeLlama
+    stdin_open: true
+    tty: true
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000 &
+             celery -A ai_bodhitree worker --loglevel=info"
+
+  redis:
+    image: redis:5.0.7
+    container_name: redis_container
+    ports:
+      - "6379:6379"
+
